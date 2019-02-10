@@ -24,12 +24,15 @@
                 <configuration>
                     <organisationName>TestOrg5</organisationName>
                     <projectName>Testproj3</projectName>
-                    <moduleName>TestMod2</moduleName>
                     <registrationKey>2b19df24-f1aa-4a43-8027-8b1df602543a</registrationKey>
-                    <files>
-                        <file>/home/knoldus/Downloads/scoverage.xml</file>
-                        <file>/home/knoldus/Downloads/scapegoat.xml</file>
-                    </files>
+                    <modules>
+                        <module1>
+                            <moduleName>TestMod1</moduleName>
+                            <files>
+                                <param>/home/knoldus/Downloads/scoverage.xml</param>
+                            </files>
+                        </module1>
+                    </modules>
                 </configuration>
             </plugin>
         </plugins>
