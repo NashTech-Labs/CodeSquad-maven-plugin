@@ -8,7 +8,6 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.List;
-import java.util.Map;
 
 @Mojo(name = "ReportUpload", threadSafe = true)
 public class CodeSquad extends AbstractMojo {
@@ -21,19 +20,17 @@ public class CodeSquad extends AbstractMojo {
     public String registrationKey;
 
     @Parameter(property = "ReportUpload.modules", required = true)
-    public Map<String, Module> modules;
+    public List<Module> modules;
 
 
-    private String route = "http://52.15.45.40:8080/add/reports";
+    private String route = "http://18.221.78.85:8080/add/reports";
 
     public void execute() throws MojoExecutionException {
         try {
-            for (Map.Entry<String, Module> reportEntry : modules.entrySet()) {
-                String moduleName = reportEntry.getValue().moduleName;
-                List<String> files = reportEntry.getValue().files;
-                for (String file : files) {
+                for (Module module : modules) {
+                    for(String file : module.files) {
                     String[] command = {"curl", "-X", "PUT", "-F", "projectName=" + projectName, "-F", "registrationKey=" + registrationKey, "-F",
-                            "moduleName=" + moduleName, "-F", "organisation=" + organisationName, "-F",
+                            "moduleName=" + module.moduleName, "-F", "organisation=" + organisationName, "-F",
                             "file=@" + file, route};
 
                     ProcessBuilder process = new ProcessBuilder(command);
