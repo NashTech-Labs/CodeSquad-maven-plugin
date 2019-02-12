@@ -17,7 +17,7 @@ step 1: Add PlugIn in pox.xml
                     <registrationKey>XXXXXXXXXX-XXXXXXXXXX</registrationKey>
                             <moduleName>XXXXXXXXXX</moduleName>
                             <files>
-                                <file>Absolute file path</file>  // Here we can have multiple file tag. Each File Tag should have report's absolute path. 
+                                <file>Report's absolute/relative path</file>  // Here you can have multiple file tag. Each file tag should contain report's absolute/relative path. 
                             </files>                 
                 </configuration>
             </plugin>
@@ -48,7 +48,7 @@ step 1: Add PlugIn in root pom.xml
                     <registrationKey>XXXXXXXXXX-XXXXXXXXXX</registrationKey>
                             <moduleName>XXXXXXXXXX</moduleName>
                             <files>
-                                <file>Absolute file path</file>  // Here we can have multiple file tag. Each File Tag should have report's absolute path. 
+                                <file>Report's absolute/relative path</file>  // Here you can have multiple file tag. Each file tag should contain report's absolute/relative path. 
                             </files>                 
                 </configuration>
             </plugin>
