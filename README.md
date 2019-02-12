@@ -1,33 +1,61 @@
 # CodeSquad-maven-plugin
 A CodeSquad maven plugin to upload code quality report on CodeSquad server.
 
-# For Report Upload In CodeSquad
-1. Add Configuration in pox.xml
- 
- &lt;build>
-   
-        <plugins>
+# Upload Single Module Project's Report In CodeSquad 
+
+step 1: Add PlugIn in pox.xml
+          
+       <build>
+          <plugins>
             <plugin>
                  <groupId>com.knoldus</groupId>
                                <artifactId>codesquad-maven-plugin</artifactId>
-                               <version>1.0-SNAPSHOT</version>
-                                <inherited>false</inherited> // Only For multi module
+                               <version>1.0-SNAPSHOT</version>                              
                 <configuration>
                     <organisationName>XXXXXXXXXX</organisationName>
                     <projectName>XXXXXXXXXX</projectName>
                     <registrationKey>XXXXXXXXXX-XXXXXXXXXX</registrationKey>
-                    <modules>
-                        <module>
                             <moduleName>XXXXXXXXXX</moduleName>
                             <files>
-                                <file>Absolute path</file>
-                            </files>
-                        </module>
-                    </modules>
+                                <file>Absolute file path</file>  // Here we can have multiple file tag. Each File Tag should have report's absolute path. 
+                            </files>                 
                 </configuration>
             </plugin>
         </plugins>
     </build>
     
 
-2. mvn codesquad:ReportUpload (run from project directory terminal to upload reports in codesquad)
+# Upload Multi Module Project's Report In CodeSquad 
+
+step 1: Add PlugIn in root pom.xml
+         
+         <plugin> 
+                <groupId>com.knoldus</groupId>
+                <artifactId>codesquad-maven-plugin</artifactId>
+                <version>1.0-SNAPSHOT</version>
+            </plugin>
+            
+            
+ step 2: Add PlugIn in every child pom.xml
+ 
+        <plugin>         
+                 <groupId>com.knoldus</groupId>
+                               <artifactId>codesquad-maven-plugin</artifactId>
+                               <version>1.0-SNAPSHOT</version>                              
+                <configuration>
+                    <organisationName>XXXXXXXXXX</organisationName>
+                    <projectName>XXXXXXXXXX</projectName>
+                    <registrationKey>XXXXXXXXXX-XXXXXXXXXX</registrationKey>
+                            <moduleName>XXXXXXXXXX</moduleName>
+                            <files>
+                                <file>Absolute file path</file>  // Here we can have multiple file tag. Each File Tag should have report's absolute path. 
+                            </files>                 
+                </configuration>
+            </plugin>
+
+
+
+# mvn codesquad:ReportUpload
+(Upload all module's reports in codesquad)
+# mvn codesquad:ReportUpload -pl moduleName
+(Upload specific module's reports in codesquad)
