@@ -1,4 +1,4 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
@@ -25,14 +25,10 @@
                     <organisationName>TestOrg5</organisationName>
                     <projectName>Testproj3</projectName>
                     <registrationKey>2b19df24-f1aa-4a43-8027-8b1df602543a</registrationKey>
-                    <modules>
-                        <module1>
-                            <moduleName>TestMod1</moduleName>
-                            <files>
-                                <param>/home/knoldus/Downloads/scoverage.xml</param>
-                            </files>
-                        </module1>
-                    </modules>
+                    <moduleName>TestMod1</moduleName>
+                    <files>
+                        <file>/home/knoldus/Downloads/scoverage.xml</file>
+                    </files>
                 </configuration>
             </plugin>
         </plugins>
