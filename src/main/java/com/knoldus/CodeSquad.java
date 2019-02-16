@@ -16,17 +16,19 @@ public class CodeSquad extends AbstractMojo {
     public String organisationName;
     @Parameter(property = "ReportUpload.projectName")
     public String projectName;
-    @Parameter(property = "ReportUpload.registrationKey")
-    public String registrationKey;
     @Parameter(property = "ReportUpload.moduleName")
     public String moduleName;
     @Parameter(property = "ReportUpload.files")
     public List<String> files;
 
-    private String route = "http://18.221.78.85:8080/add/reports";
+    private String registrationKey = System.getenv("registrationKey");
+
+    private String route = "http://52.15.45.40:8080/add/reports";
 
     public void execute() throws MojoExecutionException {
         try {
+            if(registrationKey == null)
+                throw new MojoExecutionException("Please set registrationKey as environment variable");
             for (String file : files) {
                 String[] command = {"curl", "-X", "PUT", "-F", "projectName=" + projectName, "-F", "registrationKey=" + registrationKey, "-F",
                         "moduleName=" + moduleName, "-F", "organisation=" + organisationName, "-F",
