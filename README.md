@@ -14,9 +14,9 @@ step 1: Add PlugIn in pox.xml
        <build>
           <plugins>
             <plugin>
-               <groupId>com.knoldus</groupId>
+            <groupId>com.github.knoldus</groupId>
                 <artifactId>codesquad</artifactId>
-                <version>0.1</version>                             
+                <version>1.0.0</version>                            
                 <configuration>
                     <organisationName>XXXXXXXXXX</organisationName>
                     <projectName>XXXXXXXXXX</projectName>
@@ -34,30 +34,25 @@ step 1: Add PlugIn in pox.xml
 
 step 1: Add PlugIn in root pom.xml
 
-    <repositories>
-        <repository>
-            <id>CodeSquad-maven-plugin</id>
-            <url>https://raw.github.com/knoldus/CodeSquad-maven-plugin/codesquad-plugin/</url>
-            <snapshots>
-                <enabled>true</enabled>
-                <updatePolicy>always</updatePolicy>
-            </snapshots>
-        </repository>
-    </repositories>
+          <dependency>
+                <groupId>com.github.knoldus</groupId>
+                <artifactId>codesquad</artifactId>
+                <version>1.0.0</version>
+            </dependency>
          
            <plugin>
-                <groupId>com.knoldus</groupId>
+               <groupId>com.github.knoldus</groupId>
                 <artifactId>codesquad</artifactId>
-                <version>0.1</version>
+                <version>1.0.0</version>
             </plugin>
             
             
  step 2: Add PlugIn in every child pom.xml
  
         <plugin>
-                <groupId>com.knoldus</groupId>
+                 <groupId>com.github.knoldus</groupId>
                 <artifactId>codesquad</artifactId>
-                <version>0.1</version>
+                <version>1.0.0</version>
                 <configuration>
                     <organisationName>XXXXXXX</organisationName>
                     <projectName>${project.parent.artifactId}</projectName>
