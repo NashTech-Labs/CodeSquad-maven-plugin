@@ -20,7 +20,7 @@
     <build>
         <plugins>
             <plugin>
-                <artifactId>codesquad-maven-plugin</artifactId>
+                <artifactId>codesquad</artifactId>
                 <configuration>
                     <organisationName>TestOrg5</organisationName>
                     <projectName>Testproj3</projectName>
