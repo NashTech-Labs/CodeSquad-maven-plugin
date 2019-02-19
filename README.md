@@ -5,16 +5,11 @@ A CodeSquad maven plugin to upload code quality report on CodeSquad server.
 
 step 1: Add PlugIn in pox.xml
           
-        <repositories>
-        <repository>
-            <id>CodeSquad-maven-plugin</id>
-            <url>https://raw.github.com/knoldus/CodeSquad-maven-plugin/codesquad-plugin/</url>
-            <snapshots>
-                <enabled>true</enabled>
-                <updatePolicy>always</updatePolicy>
-            </snapshots>
-        </repository>
-    </repositories>
+            <dependency>
+                <groupId>com.github.knoldus</groupId>
+                <artifactId>codesquad</artifactId>
+                <version>1.0.0</version>
+            </dependency>
      
        <build>
           <plugins>
