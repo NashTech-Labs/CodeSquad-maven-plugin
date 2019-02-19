@@ -1,9 +1,9 @@
 # CodeSquad-maven-plugin
-A CodeSquad maven plugin to upload code quality report on CodeSquad server.
+A CodeSquad maven plugin is to upload code quality report on CodeSquad server.
 
 # Upload Single Module Project's Report In CodeSquad 
 
-step 1: Add PlugIn in pox.xml
+step 1: Add PlugIn in pom.xml
           
             <dependency>
                 <groupId>com.github.knoldus</groupId>
@@ -65,8 +65,8 @@ step 1: Add PlugIn in root pom.xml
 
 
 # export registrationKey=XXXXXXXXXXX
-(set registrationKey as environment variable)
+set registrationKey as environment variable
 # mvn codesquad:ReportUpload
-(Upload all module's reports in codesquad)
+Upload all module's reports in codesquad
 # mvn codesquad:ReportUpload -pl moduleName
-(Upload specific module's reports in codesquad)
+Upload specific module's reports in codesquad
