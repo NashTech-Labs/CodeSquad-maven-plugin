@@ -3,14 +3,8 @@ A CodeSquad maven plugin is to upload code quality report on CodeSquad server.
 
 # Upload Single Module Project's Report In CodeSquad 
 
-step 1: Add PlugIn in pom.xml
+step 1: Add Plugin in pom.xml
           
-            <dependency>
-                <groupId>com.github.knoldus</groupId>
-                <artifactId>codesquad</artifactId>
-                <version>1.0.0</version>
-            </dependency>
-     
        <build>
           <plugins>
             <plugin>
@@ -32,14 +26,8 @@ step 1: Add PlugIn in pom.xml
 
 # Upload Multi Module Project's Report In CodeSquad 
 
-step 1: Add PlugIn in root pom.xml
+step 1: Add Plugin in root pom.xml
 
-          <dependency>
-                <groupId>com.github.knoldus</groupId>
-                <artifactId>codesquad</artifactId>
-                <version>1.0.0</version>
-            </dependency>
-         
            <plugin>
                <groupId>com.github.knoldus</groupId>
                 <artifactId>codesquad</artifactId>
