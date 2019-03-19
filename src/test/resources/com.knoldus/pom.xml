@@ -21,15 +21,6 @@
         <plugins>
             <plugin>
                 <artifactId>codesquad</artifactId>
-                <configuration>
-                    <organisationName>TestOrg5</organisationName>
-                    <projectName>Testproj3</projectName>
-                    <registrationKey>2b19df24-f1aa-4a43-8027-8b1df602543a</registrationKey>
-                    <moduleName>TestMod1</moduleName>
-                    <files>
-                        <file>/home/knoldus/Downloads/scoverage.xml</file>
-                    </files>
-                </configuration>
             </plugin>
         </plugins>
     </build>

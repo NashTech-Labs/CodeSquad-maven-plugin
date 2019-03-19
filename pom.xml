@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.github.knoldus</groupId>
     <artifactId>codesquad</artifactId>
-    <version>0.1</version>
+    <version>1.0.1</version>
     <packaging>maven-plugin</packaging>
     <name>CodeSquad Maven Plugin</name>
     <description>codesquad maven plugin to report upload</description>
@@ -21,7 +21,7 @@
             <name>Randhir kumar</name>
             <email>randhir.kumar@knoldus.in</email>
             <organization>knoldus</organization>
-            <organizationUrl>https://github.com/knoldus/CodeSquad-maven-plugin</organizationUrl>
+            <organizationUrl>https://www.knoldus.com/home.knol</organizationUrl>
         </developer>
     </developers>
 
