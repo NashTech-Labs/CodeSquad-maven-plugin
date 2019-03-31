@@ -1,7 +1,7 @@
 # CodeSquad-maven-plugin
 A CodeSquad maven plugin is to upload code quality report on CodeSquad server.
 
-## Upload Single Module Project's Report In CodeSquad 
+## 1. Upload Single Module Project's Report In CodeSquad 
 
 step 1: Add Plugin in pom.xml
           
@@ -16,7 +16,7 @@ step 1: Add Plugin in pom.xml
     </build>
     
 
-## Upload Multi Module Project's Report In CodeSquad 
+## 1. Upload Multi Module Project's Report In CodeSquad 
 
 step 1: Add Plugin in root pom.xml
 
@@ -35,23 +35,23 @@ step 1: Add Plugin in root pom.xml
                 <version>1.0.1</version>
             </plugin>
 
-## output directory for file reports should be following.
+## 2. output directory for file reports should be following.
     a)checkstyle:  target/checkstyle-result.xml
     b)cpd:         target/cpd.xml
     c)pmd:         target/pmd.xml
     d)findbugs:    target/findbugsXml.xml
     e)jacoco:      target/site/jacoco/jacoco.xml
 
-## create file .codesquad.properties in project base directory with following infomation
+## 3. create file .codesquad.properties in project base directory with following infomation
    
       organisationName=XXXXXXX
       projectName=XXXXXX
 
-## export registrationKey=XXXXXXXXXXX
+## 4. export registrationKey=XXXXXXXXXXX
 set registrationKey as environment variable
-## mvn codesquad:ReportUpload
+## 5. mvn codesquad:ReportUpload
 Upload all module's reports in codesquad
-## mvn codesquad:ReportUpload -pl moduleName
+## 6. mvn codesquad:ReportUpload -pl moduleName
 Upload specific module's reports in codesquad
 
 
@@ -59,7 +59,7 @@ Upload specific module's reports in codesquad
 # Alternative(Second) way to upload code quality report on CodeSquad server.
 
 
-## Upload Single Module Project's Report In CodeSquad 
+## 1. Upload Single Module Project's Report In CodeSquad 
 
 step 1: Add Plugin in pom.xml
           
@@ -82,7 +82,7 @@ step 1: Add Plugin in pom.xml
     </build>
     
 
-## Upload Multi Module Project's Report In CodeSquad 
+## 1. Upload Multi Module Project's Report In CodeSquad 
 
 step 1: Add Plugin in root pom.xml
 
@@ -110,9 +110,9 @@ step 1: Add Plugin in root pom.xml
             </plugin>
 
 
-## export registrationKey=XXXXXXXXXXX
+## 2. export registrationKey=XXXXXXXXXXX
 set registrationKey as environment variable
-## mvn codesquad:ReportUpload
+## 3. mvn codesquad:ReportUpload
 Upload all module's reports in codesquad
-## mvn codesquad:ReportUpload -pl moduleName
+## 4. mvn codesquad:ReportUpload -pl moduleName
 Upload specific module's reports in codesquad
