@@ -11,7 +11,7 @@ import java.io.FileInputStream;
 import java.io.InputStreamReader;
 import java.util.Properties;
 
-@Mojo(name = "ReportUpload", threadSafe = true)
+@Mojo(name = "reportUpload", threadSafe = true)
 public class CodeSquad extends AbstractMojo {
 
     @Parameter(defaultValue = "${project.build.directory}")
@@ -31,14 +31,13 @@ public class CodeSquad extends AbstractMojo {
                 ProcessBuilder processBuilder = new ProcessBuilder(command);
                 Process process = processBuilder.start();
                 BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
-                StringBuilder builder = new StringBuilder();
                 String line = null;
                 while ((line = reader.readLine()) != null) {
+                    StringBuilder builder = new StringBuilder();
                     builder.append(line);
                     builder.append(System.getProperty("line.separator"));
+                    System.out.print(builder);
                 }
-                String result = builder.toString();
-                System.out.print(result);
             } catch (IOException e) {
                 System.out.print("error");
                 e.printStackTrace();
@@ -60,22 +59,20 @@ public class CodeSquad extends AbstractMojo {
 
             if (projectName == null || organisationName == null)
                 throw new IllegalAccessException("Please add projectName and organisationName in .codesquad.properties");
-
-            String[] command = {"mvn", "clean", "verify"};
-            ProcessBuilder processBuilder = new ProcessBuilder(command);
-            Process process = processBuilder.start();
-            BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
-            StringBuilder builder = new StringBuilder();
-            String line = null;
-            while ((line = reader.readLine()) != null) {
-                builder.append(line);
-                builder.append(System.getProperty("line.separator"));
-            }
-            String result = builder.toString();
-            System.out.print(result);
-
-            int exitVal = process.waitFor();
-            if (exitVal == 0) {
+           if(projectName.equals(moduleName)) {
+               String[] command = {"mvn", "clean", "verify"};
+               ProcessBuilder processBuilder = new ProcessBuilder(command);
+               Process process = processBuilder.start();
+               BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
+               String line = null;
+               while ((line = reader.readLine()) != null) {
+                   StringBuilder builder = new StringBuilder();
+                   builder.append(line);
+                   builder.append(System.getProperty("line.separator"));
+                   System.out.print(builder);
+               }
+               process.waitFor();
+           } else {
                 uploadReport(organisationName, projectName, moduleName, registrationKey, target + "/checkstyle-result.xml");
                 uploadReport(organisationName, projectName, moduleName, registrationKey, target + "/cpd.xml");
                 uploadReport(organisationName, projectName, moduleName, registrationKey, target + "/pmd.xml");
