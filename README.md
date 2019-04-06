@@ -10,7 +10,7 @@ step 1: Add Plugin in pom.xml
             <plugin>
             <groupId>com.github.knoldus</groupId>
                 <artifactId>codesquad</artifactId>
-                <version>1.0.1</version>                            
+                <version>1.0.2</version>                            
             </plugin>
         </plugins>
     </build>
@@ -23,7 +23,7 @@ step 1: Add Plugin in root pom.xml
            <plugin>
                <groupId>com.github.knoldus</groupId>
                 <artifactId>codesquad</artifactId>
-                <version>1.0.1</version>
+                <version>1.0.2</version>
             </plugin>
             
             
@@ -32,7 +32,7 @@ step 1: Add Plugin in root pom.xml
            <plugin>
                  <groupId>com.github.knoldus</groupId>
                 <artifactId>codesquad</artifactId>
-                <version>1.0.1</version>
+                <version>1.0.2</version>
             </plugin>
 
 ## 2. output directory for file reports should be following.
@@ -49,11 +49,8 @@ step 1: Add Plugin in root pom.xml
 
 ## 4. export registrationKey=XXXXXXXXXXX
 set registrationKey as environment variable
-## 5. mvn codesquad:ReportUpload
+## 5. mvn codesquad:reportUpload
 Upload all module's reports in codesquad
-## 6. mvn codesquad:ReportUpload -pl moduleName
-Upload specific module's reports in codesquad
-
 
 
 # Alternative(Second) way to upload code quality report on CodeSquad server.
