@@ -1,4 +1,5 @@
 # CodeSquad-maven-plugin
+#### [Maven Repository](https://mvnrepository.com/artifact/com.github.knoldus/codesquad/1.0.2)
 A CodeSquad maven plugin is to upload code quality report on CodeSquad server.
 
 ## 1. Upload Single Module Project's Report In CodeSquad 
